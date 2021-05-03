@@ -15,10 +15,18 @@ public class Enemy : MonoBehaviour
            // Die();
         }
 
+
         else { return; }
     }
 
-   void Die()
+    private void OnTriggerEnter(Collider other)
+    {
+
+            GetComponent<LevelLoader>().ActivateLoseCanvas();
+        
+    }
+
+    void Die()
     {
         Destroy(gameObject);
     }
